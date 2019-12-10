@@ -33,7 +33,12 @@ export default function Form() {
 
     const handleTitleChange = event => setTitle(event.target.value);
     const handleDescripChange = event => setDescrip(event.target.value);
-    const handleSubmit = () => dispatch(todoAction.addTodo({id: new Date().getTime(), title, descrip}))
+    const handleSubmit = () => {
+
+      dispatch(todoAction.addTodo({id: new Date().getTime(), title, descrip}))
+      setDescrip('');
+      setTitle('')
+    }
     
 
 
@@ -57,9 +62,7 @@ export default function Form() {
     
       </div>
 
-      <div>
       
-      </div>
           </form>  
         </div>
     )

@@ -7,12 +7,14 @@ import { Button } from '@material-ui/core';
 import Header from './components/header'
 import Form from './components/form'
 import ListComp from './components/list'
-import store from './redux/store'
+import { store, persistor } from './redux/store'
+import { PersistGate } from 'redux-persist/integration/react'
 
 
 function App(props) {
   return (
     <Provider store={store} >
+      <PersistGate  loading={null} persistor={persistor}>
     <div className="App">
       
       <Header>
@@ -21,6 +23,7 @@ function App(props) {
       </Header>
       
     </div>
+    </PersistGate>
     </Provider>
   );
 }

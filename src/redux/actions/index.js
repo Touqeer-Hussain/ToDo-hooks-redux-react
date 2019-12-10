@@ -6,10 +6,10 @@ const addTodo = (todo) => {
     }
 }
 
-const editTodo = (id) => {
+const editTodo = (todo) => {
     return {
         type: 'editTodo',
-        payload: id
+        payload: todo
     }
 }
 

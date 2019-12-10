@@ -14,11 +14,24 @@ const todo = (state = initialState, action) => {
             return { ...state, todo: state.todo.concat(action.payload) }  
             
         case "editTodo":
-                return  action.payload
+                state.todo.filter((value, index) => {
+                    if(value.id == action.payload.id){
+                            state.todo[index] = {
+                                id: action.payload.id,
+                                title: action.payload.title,
+                                descrip: action.payload.descrip
+                            }
+                    }
+                }) 
+                return  { ...state, todo: state.todo}
             
             
         case "deleteTodo":
-                return  action.payload
+                
+                state.todo.filter((value, index) =>  value.id == action.payload.id && state.todo.splice(index, 1))
+                
+
+                return  { ...state, todo: state.todo}
             
             
     

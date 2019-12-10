@@ -1,8 +1,20 @@
 import { createStore } from 'redux'
 import rootReducer from './reducers'
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
-const store = createStore(
-    rootReducer,
-  )
+import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
 
-export default store
+
+
+const persistedConfig = {
+  key: 'root',
+  storage,
+  stateReconciler: hardSet
+}
+
+const persistedReducer = persistReducer(persistedConfig, rootReducer)
+let store = createStore(persistedReducer)
+let persistor = persistStore(store)
+
+export { store, persistor }
