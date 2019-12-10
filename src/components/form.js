@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField'
 import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import todoAction from '../redux/actions/index'
 
@@ -48,7 +48,7 @@ export default function Form() {
       <div>
         <TextField id="title" label="Title" value={title} onChange={handleTitleChange} />        
         <TextField
-          id="standard-full-width"
+          id="descrip"
           label="Description"
           multiline
           fullWidth

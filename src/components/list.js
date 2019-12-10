@@ -3,14 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import FolderIcon from '@material-ui/icons/Folder';
@@ -23,7 +19,6 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { getThemeProps } from '@material-ui/styles';
 import todoAction from '../redux/actions/index'
 
 
@@ -61,8 +56,7 @@ export default function ListComp() {
     const dispatch = useDispatch()
 
     const list = useSelector(state => state.todo)
-    const [dense, setDense] = React.useState(false);
-    const [secondary, setSecondary] = React.useState(false);
+    const [dense] = React.useState(false);
     const [open, setOpen] = React.useState(false);
     const [title, setTitle] = useState('')
     const [descrip, setDescrip] = useState('')

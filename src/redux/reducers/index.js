@@ -15,7 +15,7 @@ const todo = (state = initialState, action) => {
             
         case "editTodo":
                 state.todo.filter((value, index) => {
-                    if(value.id == action.payload.id){
+                    if(value.id === action.payload.id){
                             state.todo[index] = {
                                 id: action.payload.id,
                                 title: action.payload.title,
@@ -28,7 +28,7 @@ const todo = (state = initialState, action) => {
             
         case "deleteTodo":
                 
-                state.todo.filter((value, index) =>  value.id == action.payload.id && state.todo.splice(index, 1))
+                state.todo.filter((value, index) =>  value.id === action.payload.id && state.todo.splice(index, 1))
                 
 
                 return  { ...state, todo: state.todo}

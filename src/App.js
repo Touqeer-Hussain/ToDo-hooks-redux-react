@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux'
 
 
-import { Button } from '@material-ui/core';
 
 import Header from './components/header'
 import Form from './components/form'
