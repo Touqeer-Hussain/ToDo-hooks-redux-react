@@ -1,27 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { createStore } from 'redux'
-import rootReducer from './redux/reducers'
 import { Provider } from 'react-redux'
+
 
 import { Button } from '@material-ui/core';
 
 import Header from './components/header'
 import Form from './components/form'
-
-const store = createStore(
-  rootReducer,
-)
+import ListComp from './components/list'
+import store from './redux/store'
 
 
 function App(props) {
-    const [count, setCount] = useState(0)
   return (
     <Provider store={store} >
     <div className="App">
       
       <Header>
         <Form/>
-       
+        <ListComp />
       </Header>
       
     </div>

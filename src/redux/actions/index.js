@@ -1,4 +1,5 @@
 const addTodo = (todo) => {
+    console.log('action', todo)
     return {
         type: 'addTodo',
         payload: todo
