@@ -108,7 +108,7 @@ export default function ListComp() {
           </Typography>
           <div className={classes.demo}>
             <List dense={dense}>
-              {list.todo.map(value => {
+              {list &&  list.todo.map(value => {
                   return  <ListItem key={value.id}>
                   <ListItemAvatar>
                     <Avatar>

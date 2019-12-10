@@ -10,7 +10,8 @@ import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
 const persistedConfig = {
   key: 'root',
   storage,
-  stateReconciler: hardSet
+  stateReconciler: hardSet,
+  // blacklist: ['todo']
 }
 
 const persistedReducer = persistReducer(persistedConfig, rootReducer)
